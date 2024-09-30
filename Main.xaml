@@ -851,7 +851,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:ClearDataTable DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Clear All Records From the DT)" sap:VirtualizedContainerService.HintSize="334.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,invoiceComment,&quot;Not posted; System error.&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,mpesaNumber,invoiceComment,&quot;Not posted; System error.&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -912,7 +912,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ClearDataTable>
-                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Not posted; &quot;+BusinessException.Message}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="387.2,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Not posted; &quot;+BusinessException.Message}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="387.2,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -930,7 +930,7 @@
                   </Transition.Action>
                   <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,916" sap2010:WorkflowViewState.IdRef="Transition_5">
+                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,1912.8" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">407.133333333333,635.0666666666671 407.133333333333,652.413333333333 504.733333333333,652.413333333333 504.733333333333,292.413333333333 474.733333333333,292.413333333333</av:PointCollection>
@@ -944,7 +944,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="496,472" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,1468.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
                       </Sequence.Variables>
@@ -969,10 +969,10 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LookupDataTable>
-                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="If_17">
+                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,1049.6" sap2010:WorkflowViewState.IdRef="If_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -990,7 +990,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ClearDataTable>
-                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="334.4,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="334.4,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

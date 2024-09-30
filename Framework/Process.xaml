@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,3340.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1130.4,3388.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,3276" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,3324" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="tradingPartner" />
       <Variable x:TypeArguments="x:String" Name="supplierSiteName" />
@@ -120,7 +120,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="From queue, assign:&#xA;- Invoice date.&#xA;- Invoice number.&#xA;- invoice from.&#xA;- invoice tax.&#xA;- amount validation.&#xA;- confirmed amount.&#xA;- file name.&#xA;- KRA PIN.&#xA;- Invoice amount.&#xA;- Invoice description.&#xA;&#xA;Hard-code:&#xA;- Trading partner.&#xA;- Supplier site name.&#xA;- Invoice terms.&#xA;- Payment method.&#xA;- Tax rate name.&#xA;- Account." DisplayName="Multiple Assign Posting Variables" sap:VirtualizedContainerService.HintSize="572.8,963.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="From queue, assign:&#xA;- Invoice date.&#xA;- Invoice number.&#xA;- invoice from.&#xA;- invoice tax.&#xA;- amount validation.&#xA;- confirmed amount.&#xA;- file name.&#xA;- KRA PIN.&#xA;- Invoice amount.&#xA;- Invoice description.&#xD;&#xA;- Mpesa number.&#xA;&#xA;Hard-code:&#xA;- Trading partner.&#xA;- Supplier site name.&#xA;- Invoice terms.&#xA;- Payment method.&#xA;- Tax rate name.&#xA;- Account." DisplayName="Multiple Assign Posting Variables" sap:VirtualizedContainerService.HintSize="572.8,1011.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -265,6 +265,14 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Comment").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[mpesaNumber]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Mpesa Number").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
