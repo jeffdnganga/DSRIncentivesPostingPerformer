@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,3388.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1514.4,3588.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,3324" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,3524" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="tradingPartner" />
       <Variable x:TypeArguments="x:String" Name="supplierSiteName" />
@@ -120,7 +120,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="From queue, assign:&#xA;- Invoice date.&#xA;- Invoice number.&#xA;- invoice from.&#xA;- invoice tax.&#xA;- amount validation.&#xA;- confirmed amount.&#xA;- file name.&#xA;- KRA PIN.&#xA;- Invoice amount.&#xA;- Invoice description.&#xD;&#xA;- Mpesa number.&#xA;&#xA;Hard-code:&#xA;- Trading partner.&#xA;- Supplier site name.&#xA;- Invoice terms.&#xA;- Payment method.&#xA;- Tax rate name.&#xA;- Account." DisplayName="Multiple Assign Posting Variables" sap:VirtualizedContainerService.HintSize="572.8,1011.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="From queue, assign:&#xA;- Invoice date.&#xA;- Invoice number.&#xA;- invoice from.&#xA;- invoice tax.&#xA;- amount validation.&#xA;- confirmed amount.&#xA;- file name.&#xA;- KRA PIN.&#xA;- Invoice amount.&#xA;- Invoice description.&#xA;- Mpesa number.&#xA;&#xA;Hard-code:&#xA;- Trading partner.&#xA;- Supplier site name.&#xA;- Invoice terms.&#xA;- Payment method.&#xA;- Tax rate name.&#xA;- Account.&#xD;&#xA;&#xD;&#xA;By default, assign:&#xD;&#xA;- Validated in Oracle as &quot;No&quot;" DisplayName="Multiple Assign Posting Variables" sap:VirtualizedContainerService.HintSize="572.8,1121.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -275,6 +275,22 @@
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Mpesa Number").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[validatedInOracle]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">No</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[payeeEmail]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Payee Email").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
@@ -285,7 +301,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <If Condition="[amountValidation.Equals(&quot;Not compared&quot;)]" DisplayName="If Amount Validation variable is 'Not compared'" sap:VirtualizedContainerService.HintSize="572.8,2084.8" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[amountValidation.Equals(&quot;Not compared&quot;)]" DisplayName="If Amount Validation variable is 'Not compared'" sap:VirtualizedContainerService.HintSize="572.8,2174.4" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="377.6,362.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -305,7 +321,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="539.2,1539.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="539.2,1628.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -336,7 +352,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <If Condition="[invoiceExists]" sap:VirtualizedContainerService.HintSize="496,960.8" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[invoiceExists]" sap:VirtualizedContainerService.HintSize="496,1050.4" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="300,235.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
@@ -363,7 +379,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="377.6,542.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="377.6,632" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -402,10 +418,10 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <ui:LogMessage DisplayName="Log Message (Successful invoice posting)" sap:VirtualizedContainerService.HintSize="334.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Invoice posted successfully!&quot;]">
+                <ui:LogMessage DisplayName="Log Message (Successful invoice posting)" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Invoice posted successfully!&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>

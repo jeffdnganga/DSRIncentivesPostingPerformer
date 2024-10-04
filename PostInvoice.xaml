@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PostInvoice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PostInvoice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_tradingPartner" Type="InArgument(x:String)" />
     <x:Property Name="in_supplierSiteName" Type="InArgument(x:String)" />
@@ -29,7 +29,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,4311.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1514.4,4653.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostInvoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,6 +69,7 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -128,19 +129,19 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PostInvoice" sap:VirtualizedContainerService.HintSize="1110.4,4246.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PostInvoice" sap:VirtualizedContainerService.HintSize="1110.4,4588.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Oracle Applications" sap:VirtualizedContainerService.HintSize="1048,4134.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Oracle Applications" sap:VirtualizedContainerService.HintSize="1048,4476.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,3843.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,4185.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,7 +182,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NCheckState DisplayName="Check App State 'APP-SQLAP-10146'" sap:VirtualizedContainerService.HintSize="952,386.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Timeout="10" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'APP-SQLAP-10146'" sap:VirtualizedContainerService.HintSize="952,426.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Timeout="10" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,168" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -658,24 +659,106 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'close window button'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'close window button'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1232, 99, 16, 16" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java idx='3' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" Guid="f6b0734c-3dd0-42e3-b308-cdc7a03884ea" ImageBase64="" InformativeScreenshot="c24729c86fd744f711488d11d0c3d150.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="588.8,732.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[amountValidation.Equals(&quot;Yes&quot;)]" DisplayName="If Invoice Amount is OK" sap:VirtualizedContainerService.HintSize="526.4,620.8" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="492.8,204" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence sap2010:Annotation.AnnotationText="- Validate in Oracle." DisplayName="Validate in Oracle Sequence" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Validating in Oracle since invoice amount is OK...&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Actions... 1'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="34, 794, 155, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Invoice Workbench (Pwani AP Payable User)' role='internal frame' /&gt;&lt;java name='Actions... 1 alt c' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (Pwani AP Payable User)' role='internal frame' /&gt;&lt;java name='Actions... 1 alt c' role='push button' check:text='Actions... 1 alt c' /&gt;" Guid="42a79f15-cbae-428f-803f-36aaed396681" InformativeScreenshot="5e95de97ecc5c17ad6832e399677365d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Validate'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="342, 166, 72, 26" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Validate alt V' role='check box' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Validate alt V' role='check box' check:fulltext='Validate alt V' /&gt;" Guid="1a2f8824-58c9-4f82-bb2b-a2cb3e5c6757" InformativeScreenshot="8b0a880208e57ab6738f698740e0d723.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Accounting'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="342, 316, 150, 26" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Create Accounting alt t' role='check box' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Create Accounting alt t' role='check box' check:fulltext='Create Accounting alt t' /&gt;" Guid="cc71691d-16ad-4d43-bf82-d04fb43a5d1e" InformativeScreenshot="0ed35eff0f29e075ac9014670a45e220.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Final Post'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="384, 406, 85, 26" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Final Post alt o' role='radio button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='Final Post alt o' role='radio button' check:fulltext='Final Post alt o' /&gt;" Guid="703c96b4-eccc-44d4-9019-9df17be12831" InformativeScreenshot="ecbdd7da763a4299aa9c054aecab01c8.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="492, 755, 144, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='OK alt K' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='OK alt K' role='push button' check:text='OK alt K' /&gt;" Guid="e2026d65-0069-495c-b573-47f30e87c138" InformativeScreenshot="1578adbaa4f0a70c25e0ae8ec3f3b08d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <Assign DisplayName="Assign Yes to Validated in Oracle" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[validatedInOracle]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Yes</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Invoice validated in Oracle!&quot;]" />
+                        </Sequence>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="377.6,233.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Cannot validate invoice in Oracle since invoice amount is not OK!&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Clear Record'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            </ui:CommentOut>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Clear Record'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="536a6853-0bf1-47d3-9b60-cf6e59441f73" CvElementArea="326, 69, 23, 22" CvType="Icon" DesignTimeRectangle="326, 70, 26, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java cls='ToolBar' idx='47' role='tool bar' /&gt;&lt;java name='Clear Record' role='push button' /&gt;" FuzzySelectorArgument="&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java name='Clear Record' role='push button' check:text='Clear Record' /&gt;" Guid="b19fb330-f7b9-44fa-956f-33e9306f3798" InformativeScreenshot="10f30223d91eaa9256798fec971bdea5.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>

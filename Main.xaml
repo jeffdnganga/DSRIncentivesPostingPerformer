@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,866.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1514.4,866.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -851,7 +851,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:ClearDataTable DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Clear All Records From the DT)" sap:VirtualizedContainerService.HintSize="334.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,mpesaNumber,invoiceComment,&quot;Not posted; System error.&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,payeeEmail,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,mpesaNumber,invoiceComment,&quot;Not posted; System error.&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -912,7 +912,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ClearDataTable>
-                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Not posted; &quot;+BusinessException.Message}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="387.2,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Not posted; &quot;+BusinessException.Message,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="387.2,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -930,7 +930,7 @@
                   </Transition.Action>
                   <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,1912.8" sap2010:WorkflowViewState.IdRef="Transition_5">
+                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,2068.8" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">407.133333333333,635.0666666666671 407.133333333333,652.413333333333 504.733333333333,652.413333333333 504.733333333333,292.413333333333 474.733333333333,292.413333333333</av:PointCollection>
@@ -944,7 +944,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="496,1468.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,1624.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
                       </Sequence.Variables>
@@ -969,7 +969,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LookupDataTable>
-                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,1049.6" sap2010:WorkflowViewState.IdRef="If_17">
+                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,1205.6" sap2010:WorkflowViewState.IdRef="If_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -990,7 +990,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ClearDataTable>
-                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="334.4,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="334.4,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -1007,13 +1007,14 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376.8,205.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376.8,361.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:WriteCell Cell="[&quot;L&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="Posted successfully" WorkbookPath="[outputFilePath]" />
+                            <ui:WriteCell Cell="[&quot;L&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Posting Status)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="Posted successfully" WorkbookPath="[outputFilePath]" />
+                            <ui:WriteCell Cell="[&quot;N&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Validated in Oracle)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="[validatedInOracle]" WorkbookPath="[outputFilePath]" />
                           </Sequence>
                         </If.Else>
                       </If>
@@ -1059,7 +1060,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log message (No more transations available)" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Process finished due to no more transaction data&quot;]" />
               <ui:LogMessage DisplayName="Log Message (Sending output email)" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Sending output email...&quot;]" />
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[If(DateTime.Now.Hour &lt; 24, If(DateTime.Now.Hour &gt; 17, &quot;&lt;p&gt;Good evening,&lt;/p&gt;&quot;, If(DateTime.Now.Hour &gt; 11, &quot;&lt;p&gt;Good afternoon,&lt;/p&gt;&quot;, &quot;&lt;p&gt;Good morning,&lt;/p&gt;&quot;)), &quot;&lt;p&gt;Hello,&lt;/p&gt;&quot;)+&quot;&#xA;&#xA;&lt;p&gt;Attached is the output from the DSR Incentives Posting process on Oracle on &quot; &amp; Date.Now.ToString(&quot;dd.MM.yyyy&quot;) &amp; &quot;. All successfully posted invoices have been posted with the following details:&lt;/p&gt; &#xA;&#xA;&lt;table&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Trading Partner:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;Sundry Creditor&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Supplier Site Name:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;Sundry KES&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Charge Account:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;10-00-601-531120-000-0000&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;&#xA;&lt;p&gt;Kind Regards,&#xA;&lt;br&gt;&#xA;Pwani Bot&lt;/p&gt;&quot;]" Cc="ict@pwani.net" DisplayName="Send Outlook Mail Message (DSR Incentives Posting Output)" sap:VirtualizedContainerService.HintSize="387.2,294.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="DSR Incentives Posting Output" To="ap@pwani.net">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[If(DateTime.Now.Hour &lt; 24, If(DateTime.Now.Hour &gt; 17, &quot;&lt;p&gt;Good evening,&lt;/p&gt;&quot;, If(DateTime.Now.Hour &gt; 11, &quot;&lt;p&gt;Good afternoon,&lt;/p&gt;&quot;, &quot;&lt;p&gt;Good morning,&lt;/p&gt;&quot;)), &quot;&lt;p&gt;Hello,&lt;/p&gt;&quot;)+&quot;&#xA;&#xA;&lt;p&gt;Attached is the output from the DSR Incentives Posting process on Oracle on &quot; &amp; Date.Now.ToString(&quot;dd.MM.yyyy&quot;) &amp; &quot;. All successfully posted invoices have been posted with the following details:&lt;/p&gt; &#xA;&#xA;&lt;table&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Trading Partner:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;Sundry Creditor&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Supplier Site Name:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;Sundry KES&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&lt;td&gt;&lt;b&gt;Charge Account:&lt;/b&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&lt;td&gt;10-00-601-531120-000-0000&lt;/td&gt;&#xA;&#x9;&lt;/tr&gt;&#xA;&lt;/table&gt;&#xA;&#xA;&lt;p&gt;Kind Regards,&#xA;&lt;br&gt;&#xA;Pwani Bot&lt;/p&gt;&quot;]" Cc="ict@pwani.net" DisplayName="Send Outlook Mail Message (DSR Incentives Posting Output)" sap:VirtualizedContainerService.HintSize="387.2,294.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="DSR Incentives Posting Output" To="ap@pwani.net; john.hamisi@pwani.net">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                     <InArgument x:TypeArguments="x:String">[outputFilePath]</InArgument>
