@@ -652,7 +652,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <State.Transitions>
-                        <Transition DisplayName="Successful" sap:VirtualizedContainerService.HintSize="573.6,1957.6" sap2010:WorkflowViewState.IdRef="Transition_2">
+                        <Transition DisplayName="Successful" sap:VirtualizedContainerService.HintSize="573.6,2580" sap2010:WorkflowViewState.IdRef="Transition_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
@@ -665,9 +665,10 @@
                             <x:Reference>__ReferenceID0</x:Reference>
                           </Transition.To>
                           <Transition.Action>
-                            <Sequence sap:VirtualizedContainerService.HintSize="473.6,1232" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                            <Sequence sap:VirtualizedContainerService.HintSize="473.6,1854.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="outputFileExists" />
+                                <Variable x:TypeArguments="x:Boolean" Name="successfulInvoicesFileExists" />
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -678,10 +679,18 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:FileExistsX>
                               <If Condition="[outputFileExists]" DisplayName="If Output File Exists" sap:VirtualizedContainerService.HintSize="411.2,821.6" sap2010:WorkflowViewState.IdRef="If_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
                                   <Sequence sap:VirtualizedContainerService.HintSize="377.6,232" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -701,6 +710,35 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message (First run, download storage file)" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;First run, downloading output file template from storage bucket!&quot;]" />
                                     <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[outputFilePath]" DisplayName="Download Storage File (Output Template)" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="DSR Incentives Invoice Posting Results Template.xlsx" StorageBucketName="DSR Incentives Posting Storage Bucket" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <ui:FileExistsX DisplayName="Successful Invoices File Exists" Exists="[successfulInvoicesFileExists]" sap:VirtualizedContainerService.HintSize="411.2,52.8" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[successfulInvoicesFilePath]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:FileExistsX>
+                              <If Condition="[successfulInvoicesFileExists]" DisplayName="If Successful Invoices File Exists Locally" sap:VirtualizedContainerService.HintSize="411.2,489.6" sap2010:WorkflowViewState.IdRef="If_19">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="377.6,224" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[successfulInvoicesFilePath]" DisplayName="Download Successful Invoices Storage File" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_2" Path="Successfully Posted DSR Incentives Invoices.xlsx" StorageBucketName="DSR Incentives Posting Storage Bucket" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -930,7 +968,7 @@
                   </Transition.Action>
                   <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,2068.8" sap2010:WorkflowViewState.IdRef="Transition_5">
+                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,2268.8" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">407.133333333333,635.0666666666671 407.133333333333,652.413333333333 504.733333333333,652.413333333333 504.733333333333,292.413333333333 474.733333333333,292.413333333333</av:PointCollection>
@@ -944,7 +982,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="496,1624.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,1824.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
                       </Sequence.Variables>
@@ -969,7 +1007,21 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LookupDataTable>
-                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,1205.6" sap2010:WorkflowViewState.IdRef="If_17">
+                      <ui:ClearDataTable sap2010:Annotation.AnnotationText="- Clear data from invoice posting data table." DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Invoice Posting)" sap:VirtualizedContainerService.HintSize="433.6,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ClearDataTable>
+                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="433.6,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:AddDataRow>
+                      <If Condition="[foundRowIndex = -1]" DisplayName="If Invoice Number is Not Found (Success)" sap:VirtualizedContainerService.HintSize="433.6,781.6" sap2010:WorkflowViewState.IdRef="If_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -977,27 +1029,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,660.8" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376.8,236.8" sap2010:WorkflowViewState.IdRef="Sequence_44">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ClearDataTable sap2010:Annotation.AnnotationText="- Clear data from invoice posting data table." DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Invoice Posting)" sap:VirtualizedContainerService.HintSize="334.4,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:ClearDataTable>
-                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add posted invoice transaction to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Posted successfully&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Posted Invoice Transaction)" sap:VirtualizedContainerService.HintSize="334.4,232" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:AddDataRow>
-                            <ui:AppendRange sap2010:Annotation.AnnotationText="- Append successfully posted invoice to output file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range Output File Workbook (Success)" sap:VirtualizedContainerService.HintSize="334.4,147.2" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[outputFilePath]">
+                            <ui:AppendRange sap2010:Annotation.AnnotationText="- Append successfully posted invoice to output file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range Output File Workbook (Success)" sap:VirtualizedContainerService.HintSize="333.6,147.2" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[outputFilePath]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -1018,6 +1056,13 @@
                           </Sequence>
                         </If.Else>
                       </If>
+                      <ui:AppendRange sap2010:Annotation.AnnotationText="- Append successfully posted invoice to successful invoices file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range to Successful Invoices Workbook" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="Sheet1" WorkbookPath="[successfulInvoicesFilePath]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:AppendRange>
                       <Assign DisplayName="Assign Successful Count (Success)" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_29">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[successfulCount]</OutArgument>
@@ -1038,7 +1083,7 @@
           </Transition.Action>
           <Transition.Condition>[TransactionItem IsNot Nothing]</Transition.Condition>
         </Transition>
-        <Transition sap2010:Annotation.AnnotationText="This is a simple mecanism to stop the process.&#xA;In reallife scenario you can stop the process when there is no more data to process or on a schedule." DisplayName="No Data" sap:VirtualizedContainerService.HintSize="549.6,2460.8" sap2010:WorkflowViewState.IdRef="Transition_7">
+        <Transition sap2010:Annotation.AnnotationText="This is a simple mecanism to stop the process.&#xA;In reallife scenario you can stop the process when there is no more data to process or on a schedule." DisplayName="No Data" sap:VirtualizedContainerService.HintSize="549.6,3037.6" sap2010:WorkflowViewState.IdRef="Transition_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:PointCollection x:Key="ConnectorLocation">349.533333333333,326.733333333333 349.533333333333,356.733333333333 90,356.733333333333 90,330.4</av:PointCollection>
@@ -1052,7 +1097,7 @@
             <x:Reference>__ReferenceID1</x:Reference>
           </Transition.To>
           <Transition.Action>
-            <Sequence sap:VirtualizedContainerService.HintSize="449.6,1675.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,2252" sap2010:WorkflowViewState.IdRef="Sequence_39">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1163,6 +1208,9 @@
               </ui:CommentOut>
               <ui:DeleteFileX DisplayName="Delete File (Local output file)" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[outputFilePath]" />
               <ui:LogMessage DisplayName="Log Message (Email sent and local file deleted)" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Info" Message="[&quot;Email sent and local file deleted successfully!&quot;]" />
+              <ucas:DeleteStorageFile TimeoutMS="{x:Null}" DisplayName="Delete Previous Successful Invoices Storage File" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="DeleteStorageFile_1" Path="Successfully Posted DSR Incentives Invoices.xlsx" StorageBucketName="DSR Incentives Posting Storage Bucket" />
+              <ucas:UploadStorageFile FileResource="{x:Null}" TimeoutMS="{x:Null}" Destination="Successfully Posted DSR Incentives Invoices.xlsx" DisplayName="Upload Updated Successful Invoices Storage File" sap:VirtualizedContainerService.HintSize="387.2,241.6" sap2010:WorkflowViewState.IdRef="UploadStorageFile_1" Path="[successfulInvoicesFilePath]" StorageBucketName="DSR Incentives Posting Storage Bucket" />
+              <ui:DeleteFileX DisplayName="Delete Local Successful Invoices File" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[successfulInvoicesFilePath]" />
             </Sequence>
           </Transition.Action>
           <Transition.Condition>[TransactionItem Is Nothing]</Transition.Condition>
@@ -1187,6 +1235,11 @@
       <Variable x:TypeArguments="x:String" Default="[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Documents\UiPath\DSRIncetivesDirectPostingPerformer\Data\Output\DSR Incentives Invoice Posting Results &quot;+Date.Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;.xlsx&quot;]" Name="outputFilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_invoicePostingResults" />
       <Variable x:TypeArguments="x:Int32" Name="successfulCount" />
+      <Variable x:TypeArguments="x:String" Name="successfulInvoicesFilePath">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Documents\UiPath\DSRIncetivesDirectPostingPerformer\Data\Output\Successfully Posted DSR Incentives Invoices.xlsx&quot;" />
+        </Variable.Default>
+      </Variable>
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
