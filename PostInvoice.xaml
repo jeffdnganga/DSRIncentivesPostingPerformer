@@ -29,7 +29,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1130.4,7043.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1498.4,10225.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostInvoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -129,25 +129,25 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PostInvoice" sap:VirtualizedContainerService.HintSize="1110.4,6978.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PostInvoice" sap:VirtualizedContainerService.HintSize="1110.4,10160.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Oracle Applications" sap:VirtualizedContainerService.HintSize="1048,6866.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Oracle Applications" sap:VirtualizedContainerService.HintSize="1048,10048.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,6575.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,9757.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Trading Partner'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_tradingPartner]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Trading Partner'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_tradingPartner]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="634, 227, 84, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Trading Partner RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Trading Partner RequiredList of Values' role='text' /&gt;" Guid="8cea50e4-96d4-4c25-8f4b-dd4be1f2ca6f" ImageBase64="" InformativeScreenshot="67e7217f39291c1c7c9a2095cb04a2dc.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -169,15 +169,15 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - Tab" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - Tab" sap:VirtualizedContainerService.HintSize="952,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -222,7 +222,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Supplier Site Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_supplierSiteName]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Supplier Site Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_supplierSiteName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="838, 227, 98, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Supplier Site Name RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Supplier Site Name RequiredList of Values' role='text' /&gt;" Guid="03b97fdd-27df-4fd8-a3e4-6b4413afda0f" ImageBase64="" InformativeScreenshot="a2ae0eb4ab62c27de8c90d7c27d33c22.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -244,7 +244,7 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -276,7 +276,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Num'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceNumber]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Num'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceNumber]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1037, 227, 108, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Invoice Num Required' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Invoice Num Required' role='text' /&gt;" Guid="48f9982b-cb74-41e6-a74c-a2cb7cce3904" ImageBase64="" InformativeScreenshot="03da40381a25ba7e0d0e5887f76bd0dd.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -298,12 +298,12 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="518, 228, 120, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Invoice Amount Required' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Invoice Amount Required' role='text' /&gt;" Guid="29783068-7877-4de7-bf80-eaf391c6c448" ImageBase64="" InformativeScreenshot="d948e682ae0d9d1c0ed41be8d4433350.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -325,12 +325,12 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceDescription]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceDescription]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="380, 228, 240, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (Pwani Payable User)' role='internal frame' /&gt;&lt;java idx='2' name='Description' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Description' role='text' /&gt;" Guid="75539a82-b872-43fe-947b-70f107a1300c" ImageBase64="" InformativeScreenshot="de788191858482826cd08423ac122cbd.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -352,7 +352,7 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -384,7 +384,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Terms'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_invoiceTerms]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Terms'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_invoiceTerms]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="280, 228, 192, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Terms RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Terms RequiredList of Values' role='text' /&gt;" Guid="64e7087c-df9a-4b95-bce3-7b3767c03b7c" ImageBase64="" InformativeScreenshot="fdf96a596e117c0112a7799927289378.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -406,12 +406,12 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Payment Method'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_paymentMethod]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Payment Method'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_paymentMethod]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="474, 227, 180, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Payment Method RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Payment Method RequiredList of Values' role='text' /&gt;" Guid="b825f419-6565-43d6-b773-594c21d7dc9f" ImageBase64="" InformativeScreenshot="8b4b1837c02ea18b4ac71aa898d14368.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -433,12 +433,12 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CUIN Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceNumber]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CUIN Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceNumber]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="409, 227, 240, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='CUIN Number Required' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='CUIN Number Required' role='text' /&gt;" Guid="b241f954-2429-4f18-9816-7be51124a01a" ImageBase64="" InformativeScreenshot="72a2b73316feccb07d44f90dbe7d6bb7.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -460,7 +460,7 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -476,7 +476,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="181, 527, 120, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Amount Required' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Amount Required' role='text' /&gt;" Guid="b1e71c6c-2ba8-46c5-bc74-9a2d39a26993" InformativeScreenshot="4d68b47d66c9b234373fe0d01a8cfffb.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -498,7 +498,7 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -534,18 +534,18 @@
                 <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
               </If.Else>
             </If>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tax Details'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tax Details'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="1049eb4a-3af3-4446-af86-71d5b4b0f9ce" CvElementArea="376, 791, 146, 38" CvTextArea="405, 802, 82, 17" CvTextArgument="Tax Details" CvType="Button" DesignTimeRectangle="378, 794, 144, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Tax Details alt x' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Tax Details alt x' role='push button' check:text='Tax Details alt x' /&gt;" Guid="2c1590df-0781-4805-a1cc-a435ae35b72b" InformativeScreenshot="a565880190484f6db41797f9983ed2ce.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Rate Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_taxRateName]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Rate Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_taxRateName]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable CVScreenId="2f4f67fb-e4b0-4bba-a8a0-0249eed29530" CvTextArea="793, 352, 96, 17" CvTextArgument="KY VAT 16%" CvType="Text" DesignTimeRectangle="791, 347, 120, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Detail Tax Lines (*) - *' role='internal frame' /&gt;&lt;java name='Rate Name RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Detail Tax Lines (*) - *' role='internal frame' /&gt;&lt;java name='Rate Name RequiredList of Values' role='text' /&gt;" Guid="94e65d75-9e56-47b0-ab84-18b81c55ada3" InformativeScreenshot="8f7acdab23d637dc54c4ba7a02067b95.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -567,34 +567,34 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="972, 830, 126, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Detail Tax Lines (*) - *' role='internal frame' /&gt;&lt;java name='OK alt O' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Detail Tax Lines (*) - *' role='internal frame' /&gt;&lt;java name='OK alt O' role='push button' check:text='OK alt O' /&gt;" Guid="61e0fe16-b376-4535-8e86-92c8db0cabfc" InformativeScreenshot="b942cf6c1f6cf26cd2cebc1092ed256f.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Distributions'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Distributions'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="08a3e550-d298-43ef-b4fe-4b22ebd52a98" CvElementArea="873, 719, 158, 37" CvTextArea="906, 730, 92, 17" CvTextArgument="Distributions" CvType="Button" DesignTimeRectangle="875, 721, 156, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Distributions alt D' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Workbench (*)' role='internal frame' /&gt;&lt;java name='Distributions alt D' role='push button' check:text='Distributions alt D' /&gt;" Guid="e6d71b63-a3b8-40b4-98c4-874c81e02f70" InformativeScreenshot="29066de761bd1f637512b1a82ea788ea.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[invoiceAmount]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="257, 250, 168, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java name='Amount Required' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java name='Amount Required' role='text' /&gt;" Guid="dbd38078-bb71-42a9-9d87-2b2ffd24c267" InformativeScreenshot="2906d09b25573a1038208696cfde7a58.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -616,12 +616,12 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Account'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_account]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Account'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="952,254.4" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Text="[in_account]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="574, 250, 240, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java name='Account RequiredList of Values' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Distributions (*) - Pwani Oil Products Limited, *, Sundry Creditor' role='internal frame' /&gt;&lt;java name='Account RequiredList of Values' role='text' /&gt;" Guid="6667200d-913b-41fb-a02f-9104b8993a84" InformativeScreenshot="85ad4669e309fe17c4cc9e4570101d9e.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -643,18 +643,18 @@
               </uix:NTypeInto.VerifyOptions>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="370708b4-d9e0-4196-b900-abb2aa0b1253" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="0e734103-9299-4dcb-b50b-5fb1135e1b7b" CvElementArea="106, 68, 25, 24" CvType="Icon" DesignTimeRectangle="106, 70, 26, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java cls='ToolBar' idx='47' role='tool bar' /&gt;&lt;java name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java name='Save' role='push button' check:text='Save' /&gt;" Guid="93c30dd8-9a8f-4941-98f8-2c3994370f93" InformativeScreenshot="25a169a93fd9f172bc85951ce7ffd714.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -670,15 +670,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <If Condition="[amountValidation.Equals(&quot;Yes&quot;)]" DisplayName="If Invoice Amount is OK" sap:VirtualizedContainerService.HintSize="952,2482.4" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[amountValidation.Equals(&quot;Yes&quot;)]" DisplayName="If Invoice Amount is OK" sap:VirtualizedContainerService.HintSize="952,2700.8" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="539.2,2065.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence sap:VirtualizedContainerService.HintSize="539.2,2284" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="- Validate in Oracle." DisplayName="Validate in Oracle Sequence" sap:VirtualizedContainerService.HintSize="496,1976" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence sap2010:Annotation.AnnotationText="- Validate in Oracle." DisplayName="Validate in Oracle Sequence" sap:VirtualizedContainerService.HintSize="496,2194.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -722,6 +722,7 @@
                         <uix:TargetAnchorable DesignTimeRectangle="492, 755, 144, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='OK alt K' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Invoice Actions' role='internal frame' /&gt;&lt;java name='OK alt K' role='push button' check:text='OK alt K' /&gt;" Guid="e2026d65-0069-495c-b573-47f30e87c138" InformativeScreenshot="1578adbaa4f0a70c25e0ae8ec3f3b08d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Oracle Applications - PROD' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts For Clicking OK - Alt O" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(alt)]o[u(alt)][u(hk)]" Version="V4" />
                     <Assign DisplayName="Assign Yes to Validated in Oracle" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[validatedInOracle]</OutArgument>

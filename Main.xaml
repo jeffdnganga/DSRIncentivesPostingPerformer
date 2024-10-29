@@ -1,12 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C0D5EFF636C_normalisedminus_signchats_messagesminus_signv2_Create.Bundle;assembly=C0D5EFF636C_normalis.YgUs6rrbtI1dLFL23xYikC4" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C0D5EFF636C_normalisedminus_signchats_messagesminus_signv2_Create.Bundle;assembly=C0D5EFF636C_normalis.YgUs6rrbtI1dLFL23xYikC4" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umas="clr-namespace:UiPath.MicrosoftOffice365.Activities.SharePoint;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueFolder" Type="InArgument(x:String)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1514.4,866.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1498.4,866.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,6 +60,17 @@
       <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
       <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
       <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Enums</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.SharePoint</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -126,6 +138,10 @@
       <AssemblyReference>C0D5EFF636C_individu.0uvTp0JkBR1cxFwW18dE663</AssemblyReference>
       <AssemblyReference>C0D5EFF636C_individu.0uvTp0JkBR1cxFwW18dE663</AssemblyReference>
       <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="702.4,801.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -345,7 +361,7 @@
                               <InArgument x:TypeArguments="ui:BusinessRuleException">[Exception]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <TryCatch DisplayName="Try Catch Set Transaction Status (BRE)" sap:VirtualizedContainerService.HintSize="436.8,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                          <TryCatch DisplayName="Try Catch Set Transaction Status (BRE)" sap:VirtualizedContainerService.HintSize="436.8,405.6" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -353,7 +369,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (BRE)" sap:VirtualizedContainerService.HintSize="334.4,173.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (BRE)" sap:VirtualizedContainerService.HintSize="334.4,174.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">[BusinessException]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">[TransactionField1]</InArgument>
@@ -413,7 +429,7 @@
                               <InArgument x:TypeArguments="s:Exception">[Exception]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <TryCatch DisplayName="Try Catch SetTransactionStatus (SE)" sap:VirtualizedContainerService.HintSize="436.8,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                          <TryCatch DisplayName="Try Catch SetTransactionStatus (SE)" sap:VirtualizedContainerService.HintSize="436.8,404.8" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                             <TryCatch.Try>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (SE)" sap:VirtualizedContainerService.HintSize="334.4,173.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
@@ -464,7 +480,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Transitions>
-                <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="573.6,1711.2" sap2010:WorkflowViewState.IdRef="Transition_4">
+                <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="573.6,1953.6" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">303.45333333333303,635.0666666666671 303.45333333333303,664.7466666666667 506.6,664.7466666666667 506.6,64.74666666666666 476.6,64.74666666666666</av:PointCollection>
@@ -854,7 +870,7 @@
                     </State>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="473.6,1311.2" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <Sequence sap:VirtualizedContainerService.HintSize="473.6,1553.6" sap2010:WorkflowViewState.IdRef="Sequence_41">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="dt_invoicePostingResults" />
                         <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
@@ -872,15 +888,15 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ReadRange>
-                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_invoicePostingResults]" DisplayName="Lookup Data Table (Invoice Posting Results)" sap:VirtualizedContainerService.HintSize="411.2,52.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Invoice Number" LookupValue="[invoiceNumber]" RowIndex="[foundRowIndex]">
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_invoicePostingResults]" DisplayName="Lookup Data Table (Invoice Posting Results)" sap:VirtualizedContainerService.HintSize="411.2,295.2" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Invoice Number" LookupValue="[invoiceNumber]" RowIndex="[foundRowIndex]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LookupDataTable>
-                      <If Condition="[foundRowIndex = -1]" sap:VirtualizedContainerService.HintSize="411.2,1013.6" sap2010:WorkflowViewState.IdRef="If_16">
+                      <If Condition="[foundRowIndex = -1]" DisplayName="If Posting Results are not Found for this Invoice" sap:VirtualizedContainerService.HintSize="411.2,1013.6" sap2010:WorkflowViewState.IdRef="If_16">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="377.6,598.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
                             <sap:WorkflowViewStateService.ViewState>
@@ -889,7 +905,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:ClearDataTable DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Clear All Records From the DT)" sap:VirtualizedContainerService.HintSize="334.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,payeeEmail,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,mpesaNumber,invoiceComment,&quot;Not posted; System error.&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fileName,invoiceNumber,invoiceFrom,payeeEmail,kraPin,invoiceDate,invoiceDescription,confirmedAmount,invoiceAmount,invoiceTax,amountValidation,mpesaNumber,invoiceComment,&quot;System error occurred&quot;,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row to DT Invoice Posting Results" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -921,7 +937,7 @@
                   </Transition.Action>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="Business Rule Exception" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="549.6,1242.4" sap2010:WorkflowViewState.IdRef="Transition_1">
+                <Transition sap2010:Annotation.AnnotationText="Business Rule Exception" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="573.6,2425.6" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">361.053333333333,635.0666666666671 361.053333333333,665.0666666666671 504.733333333333,665.0666666666671 504.733333333333,246.65333333333302 474.733333333333,246.65333333333302</av:PointCollection>
@@ -935,40 +951,74 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="449.6,811.2" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                    <Sequence sap:VirtualizedContainerService.HintSize="473.6,1994.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_invoicePostingResults]" DisplayName="Read Range Output Workbook (Business Exception)" sap:VirtualizedContainerService.HintSize="387.2,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[outputFilePath]" />
-                      <ui:ClearDataTable sap2010:Annotation.AnnotationText="- Clear invoice posting data table." DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Invoice posting data table)" sap:VirtualizedContainerService.HintSize="387.2,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_1">
+                      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_invoicePostingResults]" DisplayName="Read Range Output Workbook (Business Exception)" sap:VirtualizedContainerService.HintSize="411.2,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[outputFilePath]" />
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_invoicePostingResults]" DisplayName="Lookup Invoice Number in Posting Results Data Table" sap:VirtualizedContainerService.HintSize="411.2,295.2" sap2010:WorkflowViewState.IdRef="LookupDataTable_3" LookupColumnName="Invoice Number" LookupValue="[invoiceNumber]" RowIndex="[foundRowIndex]" />
+                      <If sap2010:Annotation.AnnotationText="If no posting details for this invoice are found." Condition="[foundRowIndex = -1]" DisplayName="If No Posting Details Found" sap:VirtualizedContainerService.HintSize="411.2,1419.2" sap2010:WorkflowViewState.IdRef="If_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:ClearDataTable>
-                      <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment, &quot;Not posted; &quot;+BusinessException.Message,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="387.2,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:AddDataRow>
-                      <ui:AppendRange sap2010:Annotation.AnnotationText="- Append invoices posted with a Business Rule exception to output file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range Workbook (Business Exception)" sap:VirtualizedContainerService.HintSize="387.2,160" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="[outputFilePath]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:AppendRange>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,660.8" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ClearDataTable sap2010:Annotation.AnnotationText="- Clear invoice posting data table." DataTable="[dt_invoicePostingResults]" DisplayName="Clear Data Table (Invoice posting data table)" sap:VirtualizedContainerService.HintSize="334.4,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ClearDataTable>
+                            <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="- Add invoice not posted to invoice posting data table." ArrayRow="[{GlobalVariablesNamespace.GlobalVariables.fileName, GlobalVariablesNamespace.GlobalVariables.invoiceNumber, GlobalVariablesNamespace.GlobalVariables.invoiceFrom, payeeEmail, GlobalVariablesNamespace.GlobalVariables.kraPin, GlobalVariablesNamespace.GlobalVariables.invoiceDate, GlobalVariablesNamespace.GlobalVariables.invoiceDescription, GlobalVariablesNamespace.GlobalVariables.confirmedAmount, GlobalVariablesNamespace.GlobalVariables.invoiceAmount, GlobalVariablesNamespace.GlobalVariables.invoiceTax, GlobalVariablesNamespace.GlobalVariables.amountValidation,mpesaNumber,GlobalVariablesNamespace.GlobalVariables.invoiceComment,BusinessException.Message,validatedInOracle}]" DataTable="[dt_invoicePostingResults]" DisplayName="Add Data Row (Failed invoice posting)" sap:VirtualizedContainerService.HintSize="334.4,219.2" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AddDataRow>
+                            <ui:AppendRange sap2010:Annotation.AnnotationText="- Append invoices posted with a Business Rule exception to output file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range Workbook (Business Exception)" sap:VirtualizedContainerService.HintSize="334.4,160" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="[outputFilePath]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AppendRange>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,544" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Info" Message="[&quot;Posting details for this invoice already exist! Updating with business exception!&quot;]" />
+                            <ui:WriteCell Cell="[&quot;N&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Workbook Posting Status" sap:VirtualizedContainerService.HintSize="334.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Sheet1" Text="[BusinessException.Message]" WorkbookPath="[outputFilePath]" />
+                            <ui:WriteCell Cell="[&quot;O&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Workbook Validation Status" sap:VirtualizedContainerService.HintSize="334.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Sheet1" Text="[validatedInOracle]" WorkbookPath="[outputFilePath]" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
                     </Sequence>
                   </Transition.Action>
                   <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,2268.8" sap2010:WorkflowViewState.IdRef="Transition_5">
+                <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="596,3304" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">407.133333333333,635.0666666666671 407.133333333333,652.413333333333 504.733333333333,652.413333333333 504.733333333333,292.413333333333 474.733333333333,292.413333333333</av:PointCollection>
@@ -982,13 +1032,14 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence sap:VirtualizedContainerService.HintSize="496,1824.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,2860" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="foundRowIndex" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_invoicePostingResults]" DisplayName="Read Range Output File Workbook (Success)" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[outputFilePath]">
@@ -1051,11 +1102,118 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:WriteCell Cell="[&quot;L&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Posting Status)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="Posted successfully" WorkbookPath="[outputFilePath]" />
-                            <ui:WriteCell Cell="[&quot;N&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Validated in Oracle)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="[validatedInOracle]" WorkbookPath="[outputFilePath]" />
+                            <ui:WriteCell Cell="[&quot;N&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Posting Status)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="Posted successfully" WorkbookPath="[outputFilePath]" />
+                            <ui:WriteCell Cell="[&quot;O&quot;+(FoundRowIndex+2).ToString]" DisplayName="Write Cell Output Workbook (Success - Validated in Oracle)" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="[validatedInOracle]" WorkbookPath="[outputFilePath]" />
                           </Sequence>
                         </If.Else>
                       </If>
+                      <uma:Office365ApplicationScope ApplicationId="{x:Null}" ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" TenantId="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="pwanibot@pwani.net" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DisplayName="Microsoft 365 Scope" EmailAddress="pwanibot@pwani.net" Environment="Global" sap:VirtualizedContainerService.HintSize="433.6,995.2" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_3" OAuthApplication="UiPath" RuntimeItemInputMode="Browse" UseConnectionService="False">
+                        <uma:Office365ApplicationScope.AuthenticationScopes>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="2">
+                            <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
+                            <InArgument x:TypeArguments="x:String">Sites.ReadWrite.All</InArgument>
+                          </scg:List>
+                        </uma:Office365ApplicationScope.AuthenticationScopes>
+                        <uma:Office365ApplicationScope.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="377.6,752" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="sd:DataTable" Name="dtData" />
+                                <Variable x:TypeArguments="x:String" Name="strDtData" />
+                                <Variable x:TypeArguments="umm:Office365SharepointList" Name="payoutList" />
+                                <Variable x:TypeArguments="sd:DataTable" Name="dtFoundPayoutItems" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <umas:GetListInfo ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="Get Payout List Info" sap:VirtualizedContainerService.HintSize="334.4,187.2" sap2010:WorkflowViewState.IdRef="GetListInfo_1" IncludeColumnsDefinitions="True" List="[payoutList]" ListTitleOrId="DSR Incentives Payout Data" SiteUrlOrId="https://pwanioil.sharepoint.com/sites/FinancePublic" />
+                              <umas:GetListItems ContinueOnError="{x:Null}" AuthScopesInvalid="False" ColumnsToRetrieve="[{&quot;KraPin&quot;,&quot;CompanyName&quot;,&quot;PayeeName&quot;,&quot;PaymentMode&quot;,&quot;MpesaNumber&quot;,&quot;IncentiveAmount&quot;,&quot;Description&quot;,&quot;Comment&quot;}]" DisplayName="Get Payout List Items With Extracted PIN" Filter="[&quot;fields/Title eq '&quot;+kraPin+&quot;'&quot;]" sap:VirtualizedContainerService.HintSize="334.4,212" sap2010:WorkflowViewState.IdRef="GetListItems_1" List="[payoutList]" ListItems="[dtFoundPayoutItems]" />
+                              <If Condition="[validatedInOracle.Equals(&quot;Yes&quot;)]" DisplayName="If Invoice is Posted and Validated in Oracle" sap:VirtualizedContainerService.HintSize="334.4,183.2" sap2010:WorkflowViewState.IdRef="If_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="550.4,1433.6" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="507.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Info" Message="[&quot;Removing payout data for this invoice.&quot;]" />
+                                    <umas:ForEachListItem CurrentIndex="{x:Null}" DisplayName="For Each List Item" Filter="[&quot;fields/Title eq '&quot;+kraPin+&quot;'&quot;]" sap:VirtualizedContainerService.HintSize="507.2,1161.6" sap2010:WorkflowViewState.IdRef="ForEachListItem_3" List="[payoutList]">
+                                      <umas:ForEachListItem.Body>
+                                        <ActivityAction x:TypeArguments="umm:Office365SharepointListItem, x:Int32">
+                                          <ActivityAction.Argument1>
+                                            <DelegateInArgument x:TypeArguments="umm:Office365SharepointListItem" Name="ListItem" />
+                                          </ActivityAction.Argument1>
+                                          <ActivityAction.Argument2>
+                                            <DelegateInArgument x:TypeArguments="x:Int32" Name="ListItemIndex" />
+                                          </ActivityAction.Argument2>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473.6,986.4" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[ListItem.Id.Equals(TransactionItem.SpecificContent(&quot;List Item Id&quot;).ToString)]" DisplayName="If List Ids Match" sap:VirtualizedContainerService.HintSize="411.2,874.4" sap2010:WorkflowViewState.IdRef="If_29">
+                                              <If.Then>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="377.6,608.8" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[&quot;List Item Ids match&quot;]" />
+                                                  <umas:DeleteListItem ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="Delete Processed List Item" sap:VirtualizedContainerService.HintSize="334.4,89.6" sap2010:WorkflowViewState.IdRef="DeleteListItem_5" ListItem="[ListItem]" />
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Info" Message="[&quot;Payout data deleted successfully.&quot;]" />
+                                                  <ui:Break sap:VirtualizedContainerService.HintSize="334.4,24.8" sap2010:WorkflowViewState.IdRef="Break_5" />
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </umas:ForEachListItem.Body>
+                                    </umas:ForEachListItem>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_58" />
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </uma:Office365ApplicationScope.Body>
+                        <uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="{x:Null}">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uma:Office365ApplicationScope>
                       <ui:AppendRange sap2010:Annotation.AnnotationText="- Append successfully posted invoice to successful invoices file." DataTable="[dt_invoicePostingResults]" DisplayName="Append Range to Successful Invoices Workbook" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="Sheet1" WorkbookPath="[successfulInvoicesFilePath]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1235,11 +1393,7 @@
       <Variable x:TypeArguments="x:String" Default="[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Documents\UiPath\DSRIncetivesDirectPostingPerformer\Data\Output\DSR Incentives Invoice Posting Results &quot;+Date.Now.ToString(&quot;dd.MM.yyyy&quot;)+&quot;.xlsx&quot;]" Name="outputFilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_invoicePostingResults" />
       <Variable x:TypeArguments="x:Int32" Name="successfulCount" />
-      <Variable x:TypeArguments="x:String" Name="successfulInvoicesFilePath">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Documents\UiPath\DSRIncetivesDirectPostingPerformer\Data\Output\Successfully Posted DSR Incentives Invoices.xlsx&quot;" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+&quot;\Documents\UiPath\DSRIncetivesDirectPostingPerformer\Data\Output\Successfully Posted DSR Incentives Invoices.xlsx&quot;]" Name="successfulInvoicesFilePath" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
